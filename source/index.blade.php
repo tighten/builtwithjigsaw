@@ -1,5 +1,8 @@
 @extends('_layouts.master')
 
 @section('body')
-<h1>Hello world!</h1>
+<h1>Built with Jigsaw</h1>
+<ul>
+    <li>This site</li>
+</ul>
 @endsection
