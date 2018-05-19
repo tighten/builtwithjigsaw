@@ -6,7 +6,7 @@ return [
     'collections' => [
         'sites' => [
             'path' => 'sites',
-            'sort' => '-added,title',
+            'sort' => ['-added','title'],
         ]
     ],
 ];
