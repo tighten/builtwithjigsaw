@@ -10,7 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container mx-auto mt-8 pt-8">
+        <div class="container mx-auto mt-8 pt-8 px-4">
             @yield('body')
 
             <div class="mt-8 pt-8 border-t border-grey-light text-center">
