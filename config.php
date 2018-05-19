@@ -1,7 +1,12 @@
 <?php
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => 'http://builtwithjigsaw.test/',
     'production' => false,
-    'collections' => [],
+    'collections' => [
+        'sites' => [
+            'path' => 'sites',
+            'sort' => 'title',
+        ]
+    ],
 ];
