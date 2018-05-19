@@ -5,7 +5,7 @@
 @foreach ($sites->sortByDesc('added')->groupBy('added') as $date => $sites)
     <h3 class="mt-4 mb-2">Added {{ Datetime::createFromFormat('U', $date)->format('M d, Y') }}:</h3>
     <ul>
-        @foreach ($sites as $site)
+        @foreach ($sites->sortBy('title') as $site)
         <li class="mb-2">
             <a href="{{ $site->url }}">{{ $site->title }}</a> (by {{ implode($site->authors, ', ') }})
             @if ($site->repo)
