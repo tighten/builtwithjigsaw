@@ -8,7 +8,7 @@
         <title>Built With Jigsaw</title>
 
         <meta property="og:title" content="Built With Jigsaw">
-        <meta property="og:description" content="A collection of sites, apps, and articles built with and about the Jigsaw static site generator">
+        <meta property="og:description" content="A collection of sites, apps, & articles about/around the Jigsaw static site generator">
         <meta property="og:type" content="website">
         <meta property="og:image" content="{{ $page->baseUrl }}assets/images/builtwithjigsaw-og.jpg">
         <meta property="og:image:width" content="1200">

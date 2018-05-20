@@ -1,9 +1,10 @@
 @extends('_layouts.master')
 
 @section('body')
-<h1 class="mb-6">Built with Jigsaw</h1>
+<h1 class="mb-4">Built with Jigsaw</h1>
+
 @foreach ($sites->sortByDesc('added')->groupBy('added') as $date => $sites)
-    <h3 class="mt-4 mb-2">Added {{ Datetime::createFromFormat('U', $date)->format('M d, Y') }}:</h3>
+    <h3 class="mt-6 mb-2">Added {{ Datetime::createFromFormat('U', $date)->format('M d, Y') }}:</h3>
     <ul>
         @foreach ($sites->sortBy('title') as $site)
         <li class="mb-2">
