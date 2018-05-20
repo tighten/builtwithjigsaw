@@ -4,7 +4,7 @@ function heading  {
     echo $(tput bold)$(tput setaf 1)$@ $(tput sgr 0)
 }
 
-function prompt {
+function bold {
     echo $(tput bold)$(tput setaf 4)$@ $(tput sgr 0)
 }
 
@@ -18,19 +18,19 @@ echo
 heading "Creating a new site."
 
 echo
-prompt "What is the title?"
+bold "What is the title?"
 read title
 
 echo
-echo What is the first author name?
+bold "What is the first author name?"
 read author
 
 echo
-echo What is the URL?
+bold "What is the URL?"
 read url
 
 echo
-echo What is the open source repo URL, if there is one?
+bold "What is the open source repo URL, if there is one?"
 read repo
 
 slug=`slugify "$title"`
@@ -39,7 +39,7 @@ slug=`slugify "$title"`
 
 buildpath="$PWD/source/_sites/$slug.md"
 echo
-echo "Creating a file at $buildpath"
+bold "Creating a file at $buildpath"
 
 touch $buildpath
 
