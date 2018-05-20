@@ -16,4 +16,15 @@
         @endforeach
     </ul>
 @endforeach
+
+<h1 class="mt-8 mb-4">Articles about Jigsaw</h1>
+
+<ul>
+@foreach ($articles as $article)
+    <li class="mb-2">
+        <a href="{{ $article->url }}">{{ $article->title }}</a><br>
+        <span class="text-grey-darker">by {{ $article->author }} on {{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
+    </li>
+@endforeach
+</ul>
 @endsection
