@@ -7,6 +7,10 @@ return [
         'sites' => [
             'path' => 'sites',
             'sort' => ['-added','title'],
-        ]
+        ],
+        'articles' => [
+            'path' => 'articles',
+            'sort' => ['-published'],
+        ],
     ],
 ];
