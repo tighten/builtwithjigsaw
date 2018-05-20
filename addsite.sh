@@ -30,6 +30,10 @@ bold "What is the URL?"
 read url
 
 echo
+bold "What is the type? Current types: personal, blog, company, project, or docs"
+read type
+
+echo
 bold "What is the open source repo URL, if there is one?"
 read repo
 
@@ -52,6 +56,7 @@ title: "$title"
 authors: [$author]
 url: $url
 added: $date
+type: $type
 repo: $repo
 ---
 EOT
