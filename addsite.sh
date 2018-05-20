@@ -39,7 +39,8 @@ slug=`slugify "$title"`
 
 buildpath="$PWD/source/_sites/$slug.md"
 echo
-bold "Creating a file at $buildpath"
+bold "Creating a file at:"
+echo $buildpath
 
 touch $buildpath
 
