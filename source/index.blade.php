@@ -3,7 +3,7 @@
 @section('body')
 <div class="md:flex">
     <div class="flex-1">
-        <h1 class="mb-4">Built with Jigsaw</h1>
+        <h2 class="mb-4">Built with Jigsaw</h2>
 
         @foreach ($sites->sortByDesc('added')->groupBy('added') as $date => $sites)
             <h3 class="mt-6 mb-2">Added {{ Datetime::createFromFormat('U', $date)->format('M d, Y') }}:</h3>
@@ -20,7 +20,7 @@
         @endforeach
     </div>
     <div class="flex-1">
-        <h1 class="mb-4">Articles about Jigsaw</h1>
+        <h2 class="mb-4">Articles about Jigsaw</h2>
 
         <ul>
         @foreach ($articles as $article)
