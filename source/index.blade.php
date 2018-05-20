@@ -8,9 +8,9 @@
     <ul>
         @foreach ($sites->sortBy('title') as $site)
         <li class="mb-2">
-            <a href="{{ $site->url }}">{{ $site->title }}</a> (by {{ implode($site->authors, ', ') }})
+            <a href="{{ $site->url }}" class="font-bold">{{ $site->title }}</a> (by {{ implode($site->authors, ', ') }}) <span class="bg-green text-xs text-white p-1 rounded">{{ $site->type }}</span><br>
             @if ($site->repo)
-            <small> ---- OPEN SOURCE: <a href="{{ $site->repo }}">{{ $site->repo }}</a></small>
+            <span class="text-xs text-grey-darker">REPO: <a href="{{ $site->repo }}" class="text-grey-dark">{{ $site->repo }}</a></span>
             @endif
         </li>
         @endforeach
