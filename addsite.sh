@@ -1,5 +1,13 @@
 #!/bin/bash
 
+function heading  {
+    echo $(tput bold)$(tput setaf 1)$@ $(tput sgr 0)
+}
+
+function prompt {
+    echo $(tput bold)$(tput setaf 4)$@ $(tput sgr 0)
+}
+
 function slugify {
     echo "$1" | iconv -t ascii//TRANSLIT | sed -E s/[^a-zA-Z0-9]+/-/g | sed -E s/^-+\|-+$//g | tr A-Z a-z
 }
@@ -7,10 +15,10 @@ function slugify {
 # -------------------------------
 
 echo
-echo Creating a new site.
+heading "Creating a new site."
 
 echo
-echo What is the title?
+prompt "What is the title?"
 read title
 
 echo
