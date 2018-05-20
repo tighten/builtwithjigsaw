@@ -7,6 +7,7 @@ Sites built with Jigsaw.
 - [ ] Consider adding URL per author?
 - [ ] Add interviews?
 - [ ] Add more sites (ask around online)
+- [ ] Hunt down more articles
 - [x] Add more sites (scrape from GitHub search for tightenco/jigsaw)
 - [x] Add "type" (e.g. portfolio, sales site, etc.)
 - [x] Add Jigsaw articles as well
