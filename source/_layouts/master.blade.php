@@ -18,7 +18,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="pt-8">
         <div class="container mx-auto mt-8 pt-8">
             <div class="text-center mb-8 pb-6 uppercase tracking-wide border-b">
                 <h1>Built <span class="lowercase italic text-grey-darkest">with</span> Jigsaw</h1>
@@ -32,7 +32,7 @@
                 @yield('body')
             </div>
 
-            <div class="px-4 mt-8 pt-8 border-t border-grey-light text-center">
+            <div class=" px-4 my-8 pt-8 border-t border-grey-light text-center">
                 <a href="http://jigsaw.tighten.co/">Jigsaw</a> is a static site generator brought to you by <a href="https://tighten.co/">Tighten</a>. This site is <a href="https://github.com/tightenco/builtwithjigsaw">open source on GitHub</a>.
             </div>
         </div>
