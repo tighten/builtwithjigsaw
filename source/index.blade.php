@@ -1,7 +1,14 @@
 @extends('_layouts.master')
 
 @section('body')
-<div class="md:flex">
+<div class="text-center mb-8 text-grey-darkest">
+    <img src="/assets/images/header-background.png" alt="Puzzle pieces flying around" class="opacity-10" style="opacity: 0.1">
+
+    <h2 class="mb-4 font-thin">The ultimate showcase of web sites built with Jigsaw</h2>
+    <p>Browse <a href="#websites">web site inspiration</a>, find <a href="#websites">articles</a>, or <a href="/get-featured">get featured</a>.</p>
+</div>
+
+<div class="md:flex mt-8 pt-8" id="websites">
     <div class="flex-1">
         <h2 class="mb-4">Built with Jigsaw</h2>
 

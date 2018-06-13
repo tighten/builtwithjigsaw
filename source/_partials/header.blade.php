@@ -1,7 +1,25 @@
-<div class="text-center mb-8 pb-6 uppercase tracking-wide border-b">
-    <h1>Built <span class="lowercase italic text-grey-darkest">with</span> Jigsaw</h1>
-</div>
-
-<div class="mb-8 md:w-1/2 mx-auto leading-normal px-4">
-    Want to add an article you wrote or found about Jigsaw? Or add your site or project to our list? Add a <a href="https://github.com/tightenco/builtwithjigsaw/compare">Pull Request</a> if you feel comfortable, but if not, just add an <a href="https://github.com/tightenco/builtwithjigsaw/issues/new">Issue</a> and we'll add the code for you.
+<div class="bg-white shadow">
+    <div class="container mx-auto">
+        <div class="flex items-center justify-between flex-wrap p-6">
+            <a href="/" class="flex items-center flex-no-shrink no-underline text-grey-darker">
+                <h1 class="uppercase text-sm tracking-wide">Built with Jigsaw</h1>
+            </a>
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                <div class="text-sm lg:flex-grow">
+                    <!-- There is certainly a better way but I'm on a plane and it's hard to find. -->
+                </div>
+                <div>
+                    <a href="/#websites" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline mr-8">
+                        Web sites
+                    </a>
+                    <a href="/#websites" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline mr-8">
+                        Articles
+                    </a>
+                    <a href="/get-featured" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline">
+                        Get featured
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
