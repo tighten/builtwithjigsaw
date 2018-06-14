@@ -16,13 +16,11 @@
         <meta property="og:url" content="{{ $page->baseUrl }}">
         <meta property="og:site_name" content="Built With Jigsaw">
     </head>
-    <body class="pt-8">
-        <div class="container mx-auto mt-8 pt-8">
-            @include ('_partials.header')
+    <body class="bg-grey-lightest text-grey-darker">
+        @include ('_partials.header')
 
-            <div class="px-4 pt-8 border-t">
-                @yield('body')
-            </div>
+        <div class="container mx-auto">
+            @yield('body')
 
             @include ('_partials.footer')
         </div>
