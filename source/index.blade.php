@@ -9,7 +9,12 @@
 </div>
 
 <div class="mt-8 pt-8 flex justify-center flex-wrap" id="websites">
-    @each ('_partials.site', $sites, 'site')
+    @foreach ($sites as $site)
+        @include ('_partials.site', [
+            'site' => $site,
+            'page' => $page
+        ])
+    @endforeach
 </div>
 
 <div id="articles" class="mt-8 pt-8">

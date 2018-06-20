@@ -7,10 +7,22 @@ return [
         'sites' => [
             'path' => 'sites',
             'sort' => ['-added','title'],
+            'image' => function ($site) {
+                $imagePath = '/assets/images/sites/' . $site->_meta->filename . '.png';
+                return file_exists(getcwd() . '/source' . $imagePath) ? $imagePath : '/assets/images/blank-site.png';
+            }
         ],
         'articles' => [
             'path' => 'articles',
             'sort' => ['-published'],
         ],
+    ],
+    'typeColors' => [
+        'blog' => '#A5D66F',
+        'personal' => '#589EE0',
+        'docs' => '#FFC248',
+        'project' => '#50E3C2', // @todo get real color
+        'company' => '#956CC3',
+        'meetup' => '#F8E71C', // @todo get real color
     ],
 ];
