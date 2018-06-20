@@ -14,7 +14,7 @@ $image = file_exists(getcwd() . '/source' . $imagePath) ? $imagePath : '/assets/
 
 <div class="flex m-2 shadow hover:shadow-md" style="width: 380px;">
     <div class="flex-1">
-        <a href="{{ $site->url }}" class="block"><img src="{{ $image }}" alt="Web site screenshot" class="border"></a>
+        <a href="{{ $site->url }}" class="block"><img src="{{ $image }}" alt="Web site screenshot" class="border block"></a>
         <div class="text-sm py-4 px-6 bg-white">
             <a href="{{ $site->url }}" class="no-underline text-grey-darkest mb-1 block">{{ $site->title }}</a>
             <div class="mb-4 text-grey-dark">by {{ implode($site->authors, ', ') }}</div>
