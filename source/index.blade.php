@@ -8,15 +8,10 @@
     <p>Browse <a href="#websites" class="text-purple hover:text-purple-darker no-underline hover:underline">website inspiration</a>, find <a href="#articles" class="text-purple hover:text-purple-darker no-underline hover:underline">articles</a>, or <a href="/get-featured" class="text-purple hover:text-purple-darker no-underline hover:underline">get featured</a>.</p>
 </div>
 
-<div id="sites"></div>
-
 <div class="mt-8 pt-8 flex justify-center flex-wrap" id="websites">
-    @foreach ($sites as $site)
-        @include ('_partials.site', [
-            'site' => $site,
-            'page' => $page
-        ])
-    @endforeach
+    <div v-for="site in sites">
+        @include ('_partials.site')
+    </div>
 </div>
 
 <div id="articles" class="mt-8 pt-8">
@@ -31,4 +26,19 @@
     @endforeach
     </ul>
 </div>
+
+<script>
+new Vue({
+    delimiters: ['{|', '|}'],
+    data: {
+        sites: @json($sites->values()->map(function ($site) {
+                $site['image'] = $site->image();
+                return $site;
+            })
+        ),
+        colors: @json($page->typeColors),
+    },
+}).$mount('#websites');
+</script>
+
 @endsection

@@ -1,3 +1,2 @@
 window._ = require('lodash');
-
-require('./components/Sites');
+window.Vue = require('vue');

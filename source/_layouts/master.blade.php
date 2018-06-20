@@ -16,6 +16,8 @@
         <meta property="og:url" content="{{ $page->baseUrl }}">
         <meta property="og:site_name" content="Built With Jigsaw">
 
+        <script src="/assets/js/main.js"></script>
+
         @include ('_partials.svgs')
     </head>
     <body class="bg-grey-lightest text-grey-darker">
@@ -26,8 +28,6 @@
 
             @include ('_partials.footer')
         </div>
-
-        <script src="/assets/js/main.js"></script>
 
         @if ($page->production)
             <!-- Global site tag (gtag.js) - Google Analytics -->
