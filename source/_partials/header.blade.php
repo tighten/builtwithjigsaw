@@ -12,7 +12,7 @@
                     <a href="/#websites" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline mr-8">
                         Web sites
                     </a>
-                    <a href="/#websites" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline mr-8">
+                    <a href="/#articles" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline mr-8">
                         Articles
                     </a>
                     <a href="/get-featured" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline">
