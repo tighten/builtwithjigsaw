@@ -8,35 +8,40 @@
     <p>Browse <a href="#websites">web site inspiration</a>, find <a href="#websites">articles</a>, or <a href="/get-featured">get featured</a>.</p>
 </div>
 
-<div class="md:flex mt-8 pt-8" id="websites">
-    <div class="flex-1">
-        <h2 class="mb-4">Built with Jigsaw</h2>
-
-        @foreach ($sites->sortByDesc('added')->groupBy('added') as $date => $sites)
-            <h3 class="mt-6 mb-2">Added {{ Datetime::createFromFormat('U', $date)->format('M d, Y') }}:</h3>
-            <ul>
-                @foreach ($sites->sortBy('title') as $site)
-                <li class="mb-4">
-                    <a href="{{ $site->url }}" class="font-bold">{{ $site->title }}</a> (by {{ implode($site->authors, ', ') }}) <span class="bg-green text-xs text-white p-1 rounded">{{ $site->type }}</span><br>
-                    @if ($site->repo)
-                    <span class="text-xs text-grey-darker">REPO: <a href="{{ $site->repo }}" class="text-grey-dark">{{ $site->repo }}</a></span>
-                    @endif
-                </li>
-                @endforeach
-            </ul>
-        @endforeach
+<div class="mt-8 pt-8 flex justify-center flex-wrap" id="websites">
+    @foreach ($sites->sortByDesc('added') as $site)
+    <div class="flex m-2 shadow" style="width: 380px;">
+        <div class="flex-1">
+            <img src="http://via.placeholder.com/380x210">
+            <div class="middle-thingy text-sm py-4 px-6">
+                <div class="font-bold">{{ $site->title }}</div>
+                <div class="mb-4">by {{ implode($site->authors, ', ') }}</div>
+                {{--@todo make it a foreach:--}}
+                <div class="mb-4">
+                    <span class="bg-green text-xs text-white p-2 font-bold rounded">{{ ucwords($site->type) }}</span>
+                </div>
+            </div>
+            <div class="bottom-thingy bg-white flex text-sm font-bold">
+                <a href="{{ $site->url }}" class="p-4 flex-1 text-center display-block p-4 no-underline text-blue hover:bg-blue hover:text-white">{{--[icon]--}} Visit website</a>
+                @if ($site->repo)
+                <a href="{{ $site->repo }}" class="p-4 flex-1 text-center display-block p-4 no-underline text-blue hover:bg-blue hover:text-white">{{--[icon]--}} Visit repo</a>
+                @endif
+            </div>
+        </div>
     </div>
-    <div class="flex-1">
-        <h2 class="mb-4">Articles about Jigsaw</h2>
+    @endforeach
+</div>
 
-        <ul>
-        @foreach ($articles as $article)
-            <li class="mb-4">
-                <a href="{{ $article->url }}">{{ $article->title }}</a><br>
-                <span class="text-grey-darker">by {{ $article->author }} on {{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
-            </li>
-        @endforeach
-        </ul>
-    </div>
+<div id="articles" class="mt-8 pt-8">
+    <h2 class="mb-4">Recent Articles</h2>
+
+    <ul>
+    @foreach ($articles as $article)
+        <li class="mb-4">
+            <a href="{{ $article->url }}">{{ $article->title }}</a><br>
+            <span class="text-grey-darker">by {{ $article->author }} on {{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
+        </li>
+    @endforeach
+    </ul>
 </div>
 @endsection
