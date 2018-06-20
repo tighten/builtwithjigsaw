@@ -1,7 +1,7 @@
 <svg style="display:none;">
     <symbol id="icon-visit-website" viewBox="0 0 12 12">
         <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Home" transform="translate(-552.000000, -749.000000)" fill="#589EE0">
+            <g id="Home" transform="translate(-552.000000, -749.000000)" fill="currentColor">
                 <g id="icon_visitwebsite" transform="translate(76.000000, 390.000000)">
                     <g id="Group-8">
                         <g id="Group-5" transform="translate(427.000000, 339.000000)">
@@ -17,7 +17,7 @@
     </symbol>
     <symbol id="icon-visit-repo" viewBox="0 0 12 12">
         <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Home" transform="translate(-766.000000, -749.000000)" fill="#589EE0" fill-rule="nonzero">
+                <g id="Home" transform="translate(-766.000000, -749.000000)" fill="currentColor" fill-rule="nonzero">
                     <g id="icon_visitwebsite" transform="translate(76.000000, 390.000000)">
                         <g id="Group-8">
                             <g id="Group-5" transform="translate(427.000000, 339.000000)">
