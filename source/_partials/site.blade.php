@@ -1,12 +1,23 @@
+@php
+$typeColors = [
+    'blog' => '#A5D66F',
+    'personal' => '#589EE0',
+    'docs' => '#FFC248',
+    'project' => '#50E3C2', // @todo get real color
+    'company' => '#956CC3',
+]
+@endphp
+
 <div class="flex m-2 shadow hover:shadow-md" style="width: 380px;">
     <div class="flex-1">
         <a href="{{ $site->url }}"><img src="http://via.placeholder.com/380x210"></a>
         <div class="middle-thingy text-sm py-4 px-6 bg-white">
             <a href="{{ $site->url }}" class="no-underline text-grey-darkest mb-1 block">{{ $site->title }}</a>
             <div class="mb-4 text-grey-dark">by {{ implode($site->authors, ', ') }}</div>
-            {{--@todo make it a foreach:--}}
             <div class="mb-2">
-                <span class="bg-green text-xs text-white p-2 font-bold rounded">{{ ucwords($site->type) }}</span>
+                @foreach ($site->types as $type)
+                <span class="bg-green text-xs text-white py-1 px-2 inline-block rounded mr-2" style="background: {{ $typeColors[$type] }}">{{ ucwords($type) }}</span>
+                @endforeach
             </div>
         </div>
         <div class="bottom-thingy bg-white flex text-sm border-t">
