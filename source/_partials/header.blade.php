@@ -64,13 +64,13 @@
                     <!-- There is certainly a better way but I'm on a plane and it's hard to find. -->
                 </div>
                 <div>
-                    <a href="/#websites" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline mr-8">
-                        Web sites
+                    <a href="/#websites" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline hover:text-purple-dark mr-8">
+                        Websites
                     </a>
-                    <a href="/#articles" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline mr-8">
+                    <a href="/#articles" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline hover:text-purple-dark mr-8">
                         Articles
                     </a>
-                    <a href="/get-featured" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline">
+                    <a href="/get-featured" class="block mt-4 lg:inline-block lg:mt-0 text-purple font-bold no-underline hover:underline hover:text-purple-dark">
                         Get featured
                     </a>
                 </div>

@@ -2,10 +2,10 @@
 
 @section('body')
 <div class="text-center mb-8 text-grey-darkest">
-    <img src="/assets/images/header-background.png" alt="Puzzle pieces flying around" class="opacity-10" style="opacity: 0.1">
+    <img src="/assets/images/header-background.png" alt="Puzzle pieces flying around" class="max-w-full lg:max-w-xl" style="opacity: 0.1">
 
-    <h2 class="mb-4 font-thin">The ultimate showcase of web sites built with Jigsaw</h2>
-    <p>Browse <a href="#websites">web site inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.</p>
+    <h2 class="mb-4 font-thin">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest hover:text-purple">Jigsaw</a></h2>
+    <p>Browse <a href="#websites" class="text-purple hover:text-purple-darker no-underline hover:underline">website inspiration</a>, find <a href="#articles" class="text-purple hover:text-purple-darker no-underline hover:underline">articles</a>, or <a href="/get-featured" class="text-purple hover:text-purple-darker no-underline hover:underline">get featured</a>.</p>
 </div>
 
 <div class="mt-8 pt-8 flex justify-center flex-wrap" id="websites">
