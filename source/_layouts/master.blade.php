@@ -27,6 +27,8 @@
             @include ('_partials.footer')
         </div>
 
+        <script src="/assets/js/main.js"></script>
+
         @if ($page->production)
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53203205-6"></script>

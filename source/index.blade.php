@@ -8,6 +8,8 @@
     <p>Browse <a href="#websites" class="text-purple hover:text-purple-darker no-underline hover:underline">website inspiration</a>, find <a href="#articles" class="text-purple hover:text-purple-darker no-underline hover:underline">articles</a>, or <a href="/get-featured" class="text-purple hover:text-purple-darker no-underline hover:underline">get featured</a>.</p>
 </div>
 
+<div id="sites"></div>
+
 <div class="mt-8 pt-8 flex justify-center flex-wrap" id="websites">
     @foreach ($sites as $site)
         @include ('_partials.site', [
