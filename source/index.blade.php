@@ -5,7 +5,7 @@
     <img src="/assets/images/header-background.png" alt="Puzzle pieces flying around" class="opacity-10" style="opacity: 0.1">
 
     <h2 class="mb-4 font-thin">The ultimate showcase of web sites built with Jigsaw</h2>
-    <p>Browse <a href="#websites">web site inspiration</a>, find <a href="#websites">articles</a>, or <a href="/get-featured">get featured</a>.</p>
+    <p>Browse <a href="#websites">web site inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.</p>
 </div>
 
 <div class="mt-8 pt-8 flex justify-center flex-wrap" id="websites">
