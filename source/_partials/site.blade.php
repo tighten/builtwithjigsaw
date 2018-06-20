@@ -11,9 +11,9 @@
             </div>
         </div>
         <div class="bg-white flex text-sm border-t">
-            <a href="{{ $site->url }}" class="p-4 flex-1 text-center p-4 no-underline text-blue hover:bg-blue hover:text-white">{{--[icon]--}} Visit website</a>
+            <a href="{{ $site->url }}" class="p-4 flex-1 text-center p-4 no-underline text-blue hover:bg-blue hover:text-white"><svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-website"/></svg> Visit website</a>
             @if ($site->repo)
-            <a href="{{ $site->repo }}" class="p-4 flex-1 text-center p-4 no-underline text-blue hover:bg-blue hover:text-white">{{--[icon]--}} Visit repo</a>
+            <a href="{{ $site->repo }}" class="p-4 flex-1 text-center p-4 no-underline text-blue hover:bg-blue hover:text-white"><svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-repo"/></svg> Visit repo</a>
             @endif
         </div>
     </div>

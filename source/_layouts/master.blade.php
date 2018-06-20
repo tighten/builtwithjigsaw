@@ -15,6 +15,8 @@
         <meta property="og:image:height" content="630">
         <meta property="og:url" content="{{ $page->baseUrl }}">
         <meta property="og:site_name" content="Built With Jigsaw">
+
+        @include ('_partials.svgs')
     </head>
     <body class="bg-grey-lightest text-grey-darker">
         @include ('_partials.header')
