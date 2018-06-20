@@ -5,12 +5,13 @@ $typeColors = [
     'docs' => '#FFC248',
     'project' => '#50E3C2', // @todo get real color
     'company' => '#956CC3',
+    'meetup' => '#F8E71C',
 ]
 @endphp
 
 <div class="flex m-2 shadow hover:shadow-md" style="width: 380px;">
     <div class="flex-1">
-        <a href="{{ $site->url }}"><img src="http://via.placeholder.com/380x210"></a>
+        <a href="{{ $site->url }}"><img src="{{ '/assets/images/blank-site.png' }}" alt="Web site screenshot"></a>
         <div class="middle-thingy text-sm py-4 px-6 bg-white">
             <a href="{{ $site->url }}" class="no-underline text-grey-darkest mb-1 block">{{ $site->title }}</a>
             <div class="mb-4 text-grey-dark">by {{ implode($site->authors, ', ') }}</div>
