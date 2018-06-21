@@ -1,14 +1,22 @@
 @extends('_layouts.master')
 
 @section('body')
-<div class="text-center mb-8 text-grey-darkest">
+<div class="mb-8 text-center text-grey-darkest">
     <img src="/assets/images/header-background.png" alt="Puzzle pieces flying around" class="max-w-full lg:max-w-xl" style="opacity: 0.1">
 
-    <h2 class="mb-4 font-thin">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest hover:text-purple">Jigsaw</a></h2>
+    <h2 class="font-thin mb-4">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest hover:text-purple">Jigsaw</a></h2>
+
     <p>Browse <a href="#websites" class="text-purple hover:text-purple-darker no-underline hover:underline">website inspiration</a>, find <a href="#articles" class="text-purple hover:text-purple-darker no-underline hover:underline">articles</a>, or <a href="/get-featured" class="text-purple hover:text-purple-darker no-underline hover:underline">get featured</a>.</p>
 </div>
 
-<div class="mt-8 pt-8 flex justify-center flex-wrap" id="websites">
+<div id="websites" class="mt-8 pt-8 flex flex-wrap justify-center">
+    {{--
+        If you're coming across thie codebase for the first time, you might be
+        surprised to see v-for here instead of Blade's @foreach.
+
+        Take a look at resources/views/_partials/site.blade.php to see some
+        more notes about how we set this up, and why.
+    --}}
     <div v-for="site in sites">
         @include ('_partials.site')
     </div>
@@ -31,6 +39,9 @@
 new Vue({
     delimiters: ['{|', '|}'],
     data: {
+        // Here we use Laravel Blade's json directive to take our site,
+        // map over them to output the custom image for each, and then
+        // JSON-encode them and pass them into Vue.
         sites: @json($sites->values()->map(function ($site) {
                 $site['image'] = $site->image();
                 return $site;
