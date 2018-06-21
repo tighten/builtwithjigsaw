@@ -13,12 +13,12 @@
     <div class="text-center mt-8 pt-8 text-sm">
         <a
             @click="type = 'all'"
-            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'font-bold underline text-purple': type == 'all'}"
+            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'underline text-purple': type == 'all'}"
             >All Categories</a>
         <a
             v-for="color, thisType in colors"
             @click="type = thisType"
-            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'font-bold underline text-purple': type == thisType}"
+            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'underline text-purple': type == thisType}"
             >{| _.startCase(thisType) |}</a>
     </div>
     <div class="mt-1 pt-6 flex flex-wrap justify-center">
