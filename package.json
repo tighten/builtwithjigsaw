@@ -13,10 +13,11 @@
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^3.2.3",
         "hasbin": "^1.2.3",
-        "laravel-mix": "^2.0.0",
+        "laravel-mix": "^2.1",
         "lodash": "^4.17.4",
         "node-cmd": "^3.0.0",
         "on-build-webpack": "^0.1.0",
+        "tailwindcss": "^0.6.0",
         "vue": "^2.5.16",
         "webpack-watch": "^0.2.0",
         "yargs": "^4.6.0"

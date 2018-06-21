@@ -7,10 +7,16 @@ mix.webpackConfig({
     plugins: [
         build.jigsaw,
         build.browserSync(),
-        build.watch(['source/**/*.md', 'source/**/*.php', 'source/**/*.scss']),
+        build.watch(['source/**/*.md', 'source/**/*.php', 'source/_assets/**/*.css', 'source/_assets/**/*.js']),
     ]
 });
 
-mix.react('source/_assets/js/main.js', 'js')
-    .sass('source/_assets/sass/main.scss', 'css/main.css')
-    .version();
+mix.options({
+    postCss: [
+        require('tailwindcss')('./tailwind.js')
+    ]
+});
+
+mix.postCss('source/_assets/css/main.css', 'css/main.css');
+
+mix.react('source/_assets/js/main.js', 'js');
