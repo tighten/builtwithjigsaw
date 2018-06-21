@@ -19,4 +19,4 @@ mix.options({
 
 mix.postCss('source/_assets/css/main.css', 'css/main.css');
 
-mix.react('source/_assets/js/main.js', 'js');
+mix.js('source/_assets/js/main.js', 'js');
