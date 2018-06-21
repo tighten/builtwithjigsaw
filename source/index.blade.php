@@ -23,7 +23,7 @@
     </div>
     <div class="mt-1 pt-6 flex flex-wrap justify-center">
         {{--
-            If you're coming across thie codebase for the first time, you might be
+            If you're coming across this codebase for the first time, you might be
             surprised to see v-for here instead of Blade's @foreach.
 
             Take a look at resources/views/_partials/site.blade.php to see some
@@ -52,7 +52,7 @@
 new Vue({
     delimiters: ['{|', '|}'],
     data: {
-        // Here we use Laravel Blade's json directive to take our site,
+        // Here we use Laravel Blade's json directive to take our sites,
         // map over them to output the custom image for each, and then
         // JSON-encode them and pass them into Vue.
         sites: @json($sites->values()->map(function ($site) {
