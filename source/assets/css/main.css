@@ -4351,6 +4351,10 @@ table {
   opacity: 0;
 }
 
+.opacity-10 {
+  opacity: .1;
+}
+
 .opacity-25 {
   opacity: .25;
 }
@@ -4363,7 +4367,39 @@ table {
   opacity: .75;
 }
 
+.opacity-90 {
+  opacity: .9;
+}
+
 .opacity-100 {
+  opacity: 1;
+}
+
+.hover\:opacity-0:hover {
+  opacity: 0;
+}
+
+.hover\:opacity-10:hover {
+  opacity: .1;
+}
+
+.hover\:opacity-25:hover {
+  opacity: .25;
+}
+
+.hover\:opacity-50:hover {
+  opacity: .5;
+}
+
+.hover\:opacity-75:hover {
+  opacity: .75;
+}
+
+.hover\:opacity-90:hover {
+  opacity: .9;
+}
+
+.hover\:opacity-100:hover {
   opacity: 1;
 }
 
@@ -6380,6 +6416,20 @@ table {
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+a {
+  color: #9561e2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #794acf;
+  text-decoration: underline;
+}
+
+[v-cloak] {
+  display: none;
+}
 
 @media (min-width: 576px) {
   .sm\:list-reset {
@@ -10027,6 +10077,10 @@ table {
     opacity: 0;
   }
 
+  .sm\:opacity-10 {
+    opacity: .1;
+  }
+
   .sm\:opacity-25 {
     opacity: .25;
   }
@@ -10039,7 +10093,39 @@ table {
     opacity: .75;
   }
 
+  .sm\:opacity-90 {
+    opacity: .9;
+  }
+
   .sm\:opacity-100 {
+    opacity: 1;
+  }
+
+  .sm\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .sm\:hover\:opacity-10:hover {
+    opacity: .1;
+  }
+
+  .sm\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .sm\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .sm\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .sm\:hover\:opacity-90:hover {
+    opacity: .9;
+  }
+
+  .sm\:hover\:opacity-100:hover {
     opacity: 1;
   }
 
@@ -15673,6 +15759,10 @@ table {
     opacity: 0;
   }
 
+  .md\:opacity-10 {
+    opacity: .1;
+  }
+
   .md\:opacity-25 {
     opacity: .25;
   }
@@ -15685,7 +15775,39 @@ table {
     opacity: .75;
   }
 
+  .md\:opacity-90 {
+    opacity: .9;
+  }
+
   .md\:opacity-100 {
+    opacity: 1;
+  }
+
+  .md\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .md\:hover\:opacity-10:hover {
+    opacity: .1;
+  }
+
+  .md\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .md\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .md\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .md\:hover\:opacity-90:hover {
+    opacity: .9;
+  }
+
+  .md\:hover\:opacity-100:hover {
     opacity: 1;
   }
 
@@ -21319,6 +21441,10 @@ table {
     opacity: 0;
   }
 
+  .lg\:opacity-10 {
+    opacity: .1;
+  }
+
   .lg\:opacity-25 {
     opacity: .25;
   }
@@ -21331,7 +21457,39 @@ table {
     opacity: .75;
   }
 
+  .lg\:opacity-90 {
+    opacity: .9;
+  }
+
   .lg\:opacity-100 {
+    opacity: 1;
+  }
+
+  .lg\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .lg\:hover\:opacity-10:hover {
+    opacity: .1;
+  }
+
+  .lg\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .lg\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .lg\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .lg\:hover\:opacity-90:hover {
+    opacity: .9;
+  }
+
+  .lg\:hover\:opacity-100:hover {
     opacity: 1;
   }
 
@@ -26965,6 +27123,10 @@ table {
     opacity: 0;
   }
 
+  .xl\:opacity-10 {
+    opacity: .1;
+  }
+
   .xl\:opacity-25 {
     opacity: .25;
   }
@@ -26977,7 +27139,39 @@ table {
     opacity: .75;
   }
 
+  .xl\:opacity-90 {
+    opacity: .9;
+  }
+
   .xl\:opacity-100 {
+    opacity: 1;
+  }
+
+  .xl\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .xl\:hover\:opacity-10:hover {
+    opacity: .1;
+  }
+
+  .xl\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .xl\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .xl\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .xl\:hover\:opacity-90:hover {
+    opacity: .9;
+  }
+
+  .xl\:hover\:opacity-100:hover {
     opacity: 1;
   }
 

@@ -2,23 +2,36 @@
 
 @section('body')
 <div class="mb-8 text-center text-grey-darkest">
-    <img src="/assets/images/header-background.png" alt="Puzzle pieces flying around" class="max-w-full lg:max-w-xl" style="opacity: 0.1">
+    <img src="/assets/images/header-background.png" alt="Puzzle pieces flying around" class="max-w-full lg:max-w-xl opacity-10">
 
-    <h2 class="font-thin mb-4">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest hover:text-purple">Jigsaw</a></h2>
+    <h2 class="font-thin mb-4">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest underline hover:text-purple">Jigsaw</a></h2>
 
-    <p>Browse <a href="#websites" class="text-purple hover:text-purple-darker no-underline hover:underline">website inspiration</a>, find <a href="#articles" class="text-purple hover:text-purple-darker no-underline hover:underline">articles</a>, or <a href="/get-featured" class="text-purple hover:text-purple-darker no-underline hover:underline">get featured</a>.</p>
+    <p>Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.</p>
 </div>
 
-<div id="websites" class="mt-8 pt-8 flex flex-wrap justify-center">
-    {{--
-        If you're coming across thie codebase for the first time, you might be
-        surprised to see v-for here instead of Blade's @foreach.
+<div id="websites" v-cloak>
+    <div class="text-center mt-8 pt-8 text-sm">
+        <a
+            @click="type = 'all'"
+            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'font-bold underline text-purple': type == 'all'}"
+            >All Categories</a>
+        <a
+            v-for="color, thisType in colors"
+            @click="type = thisType"
+            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'font-bold underline text-purple': type == thisType}"
+            >{| _.startCase(thisType) |}</a>
+    </div>
+    <div class="mt-1 pt-6 flex flex-wrap justify-center">
+        {{--
+            If you're coming across thie codebase for the first time, you might be
+            surprised to see v-for here instead of Blade's @foreach.
 
-        Take a look at resources/views/_partials/site.blade.php to see some
-        more notes about how we set this up, and why.
-    --}}
-    <div v-for="site in sites">
-        @include ('_partials.site')
+            Take a look at resources/views/_partials/site.blade.php to see some
+            more notes about how we set this up, and why.
+        --}}
+        <div v-for="site in filteredSites">
+            @include ('_partials.site')
+        </div>
     </div>
 </div>
 
@@ -48,7 +61,15 @@ new Vue({
             })
         ),
         colors: @json($page->typeColors),
+        type: 'all',
     },
+    computed: {
+        filteredSites: function () {
+            if (this.type === 'all') return this.sites;
+
+            return this.sites.filter(site => !! site.types.find(type => type == this.type));
+        }
+    }
 }).$mount('#websites');
 </script>
 

@@ -32,6 +32,7 @@
  * @import "components/forms";
  */
 
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -56,3 +57,15 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+a {
+    @apply text-purple no-underline;
+}
+
+a:hover {
+    @apply text-purple-dark underline;
+}
+
+[v-cloak] {
+    display: none;
+}

@@ -795,9 +795,11 @@ module.exports = {
 
   opacity: {
     '0': '0',
+    '10': '.1',
     '25': '.25',
     '50': '.5',
     '75': '.75',
+    '90': '.9',
     '100': '1',
   },
 
@@ -886,7 +888,7 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    opacity: ['responsive'],
+    opacity: ['responsive', 'hover'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],

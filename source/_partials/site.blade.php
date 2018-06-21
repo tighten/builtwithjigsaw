@@ -12,18 +12,40 @@
         <a :href="site.url" class="block"><img :src="site.image" alt="Web site screenshot" class="block border"></a>
 
         <div class="bg-white px-6 py-4 text-sm">
-            <a :href="site.url" class="block mb-1 no-underline text-grey-darkest">{| site.title |}</a>
+            <a
+                :href="site.url"
+                class="block mb-1 no-underline text-grey-darkest"
+                >
+                {| site.title |}
+            </a>
 
             <div class="mb-4 text-grey-dark">by {| site.authors.join(', ') |}</div>
 
             <div class="mb-2">
-                <span v-for="type in site.types" class="bg-green inline-block py-1 px-2 rounded mr-2 text-white text-xs" :style="{ background: colors[type] }">{| _.startCase(type) |}</span>
+                <span
+                    v-for="type in site.types"
+                    class="bg-green inline-block py-1 px-2 rounded mr-2 text-white text-xs"
+                    :style="{ background: colors[type] }"
+                    >{| _.startCase(type) |}</span>
             </div>
         </div>
         <div class="bg-white flex text-sm border-t">
-            <a :href="site.url" class="p-4 flex-1 p-4 no-underline text-blue text-center hover:bg-blue hover:text-white"><svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-website"/></svg> Visit website</a>
+            <a
+                :href="site.url"
+                class="flex-1 no-underline hover:no-underline p-4 text-blue text-center hover:bg-blue hover:text-white"
+                >
+                <svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-website"/></svg>
+                Visit website
+            </a>
 
-            <a v-if="site.repo" :href="site.repo" class="flex-1 no-underline p-4 text-blue text-center hover:bg-blue hover:text-white"><svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-repo"/></svg> Visit repo</a>
+            <a
+                v-if="site.repo"
+                :href="site.repo"
+                class="flex-1 no-underline hover:no-underline p-4 text-blue text-center hover:bg-blue hover:text-white"
+                >
+                <svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-repo"/></svg>
+                Visit repo
+            </a>
         </div>
     </div>
 </div>
