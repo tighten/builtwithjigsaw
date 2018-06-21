@@ -19,10 +19,10 @@ return [
     ],
     'typeColors' => [
         'blog' => '#A5D66F',
-        'personal' => '#589EE0',
-        'docs' => '#FFC248',
-        'project' => '#50E3C2', // @todo get real color
         'company' => '#956CC3',
+        'docs' => '#FFC248',
         'meetup' => '#F8E71C', // @todo get real color
+        'personal' => '#589EE0',
+        'project' => '#50E3C2', // @todo get real color
     ],
 ];
