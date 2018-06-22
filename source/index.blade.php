@@ -69,10 +69,10 @@ new Vue({
         },
     },
     computed: {
-        filteredSites: function () {
-            if (this.type === 'all') return this.sites;
-
-            return this.sites.filter(site => !! site.types.find(type => type == this.type));
+        filteredSites() {
+            return this.type === 'all' ?
+                this.sites :
+                this.sites.filter(site => site.types.includes(this.type));
         }
     }
 }).$mount('#websites');
