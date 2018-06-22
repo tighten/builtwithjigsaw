@@ -12,4 +12,4 @@ Sites built with Jigsaw.
 - [x] Add more sites (scrape from GitHub search for tightenco/jigsaw)
 - [x] Add "type" (e.g. portfolio, sales site, etc.)
 - [x] Add Jigsaw articles as well
-- [ ] Make the site type in the cards clickable
+- [x] Make the site type in the cards clickable
