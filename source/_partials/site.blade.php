@@ -24,8 +24,9 @@
             <div class="mb-2">
                 <span
                     v-for="type in site.types"
-                    class="bg-green inline-block py-1 px-2 rounded mr-2 text-white text-xs"
+                    class="bg-green cursor-pointer inline-block py-1 px-2 rounded mr-2 text-white text-xs"
                     :style="{ background: colors[type] }"
+                    @click="filterType(type)"
                     >{| _.startCase(type) |}</span>
             </div>
         </div>

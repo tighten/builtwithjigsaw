@@ -12,13 +12,13 @@
 <div id="websites" v-cloak>
     <div class="text-center mt-8 pt-8 text-sm">
         <a
-            @click="type = 'all'"
-            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'underline text-purple': type == 'all'}"
+            @click="filterType('all')"
+            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple underline': type == 'all'}"
             >All Categories</a>
         <a
             v-for="color, thisType in colors"
-            @click="type = thisType"
-            :class="{'cursor-pointer pb-2 inline-block px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'underline text-purple': type == thisType}"
+            @click="filterType(thisType)"
+            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple underline': type == thisType}"
             >{| _.startCase(thisType) |}</a>
     </div>
     <div class="mt-1 pt-6 flex flex-wrap justify-center">
@@ -62,6 +62,11 @@ new Vue({
         ),
         colors: @json($page->typeColors),
         type: 'all',
+    },
+    methods: {
+        filterType: function (type) {
+            this.type = type;
+        },
     },
     computed: {
         filteredSites: function () {
