@@ -1,7 +1,7 @@
 {{--
-    Just coming across this code base for the first time?
+    Just coming across this codebase for the first time?
 
-    This looks a little different from most Jigsaw codebases, because it's using Blade to generate a template that will then be consumed by Vue.
+    This looks a little different from most Jigsaw code, because it's using Blade to generate a template that will then be consumed by Vue.
 
     That's why you're seeing {| and |} everywhere; those are the custom delimiters we've set up for our Vue-in-Blade code.
 
