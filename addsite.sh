@@ -56,7 +56,7 @@ title: "$title"
 authors: [$author]
 url: $url
 added: $date
-type: $type
+type: [$type]
 repo: $repo
 ---
 EOT
