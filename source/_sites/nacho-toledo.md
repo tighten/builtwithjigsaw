@@ -1,5 +1,5 @@
 ---
-title: "Nacho Toledo"
+title: "Nacho Toledo Personal Site"
 authors: [Nacho Toledo]
 url: https://ign.uy
 added: 2018-08-24
