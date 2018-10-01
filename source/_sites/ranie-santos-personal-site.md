@@ -4,5 +4,5 @@ authors: [Ranie Santos]
 url: https://raniesantos.netlify.com/
 added: 2018-05-19
 types: [blog, personal]
-repo: https://github.com/raniesantos/jigsaw-blog
+repo: https://github.com/raniesantos/raniesantos-blog
 ---
