@@ -6,6 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Built With Jigsaw</title>
 
+        <meta name="description" content="A collection of sites, apps, & articles about/around the Jigsaw static site generator">
         <meta property="og:title" content="Built With Jigsaw">
         <meta property="og:description" content="A collection of sites, apps, & articles about/around the Jigsaw static site generator">
         <meta property="og:type" content="website">
