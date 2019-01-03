@@ -37,6 +37,17 @@ echo
 bold "What is the open source repo URL, if there is one?"
 read repo
 
+echo
+bold "Was this site created using the Jigsaw generators? (Y/N)"
+read generators
+generators=${generators::1}
+
+if [ $generators == "Y" ] || [ $generators == "y" ] ; then
+    usedGenerator=true
+else
+    usedGenerator=false
+fi
+
 slug=`slugify "$title"`
 
 # -------------------------------
@@ -58,7 +69,9 @@ url: $url
 added: $date
 types: [$type]
 repo: $repo
+usedGenerator: $usedGenerator
 ---
 EOT
 
 vim $buildpath
+
