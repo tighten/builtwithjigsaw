@@ -1,6 +1,6 @@
 ---
 title: "Social Trader Tools"
-authors: [Benjamin McMullan]
+authors: [Titanium Finance Technology]
 url: https://www.socialtradertools.com/
 added: 2019-04-18
 types: [company]
