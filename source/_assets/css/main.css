@@ -59,11 +59,27 @@
  */
 
 a {
-    @apply text-purple-dark no-underline;
+    @apply text-purple;
+    @apply no-underline;
 }
 
 a:hover {
-    @apply text-purple-darker underline;
+    @apply text-purple-dark;
+    @apply underline;
+}
+
+.article {
+    @apply bg-white;
+    @apply border;
+    @apply flex-col;
+    @apply h-48;
+    @apply justify-between;
+    @apply mx-2;
+    @apply my-4;
+    @apply p-4;
+    @apply rounded;
+    @apply shadow;
+    width: 380px;
 }
 
 [v-cloak] {
