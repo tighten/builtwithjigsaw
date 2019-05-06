@@ -61,11 +61,11 @@
 a {
     @apply text-purple;
     @apply no-underline;
-}
 
-a:hover {
-    @apply text-purple-dark;
-    @apply underline;
+    &:hover {
+        @apply text-purple-dark;
+        @apply underline;
+    }
 }
 
 .article {
@@ -80,6 +80,27 @@ a:hover {
     @apply rounded;
     @apply shadow;
     width: 380px;
+}
+
+.jigsaw-hero {
+    background: url('/assets/images/jigsaw-outline.svg');
+    min-height: 175px;
+
+    @apply bg-cover;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply justify-center;
+    @apply mb-8;
+    @apply text-white;
+    @apply w-full;
+
+    a {
+        @apply font-normal;
+        @apply text-white;
+        @apply no-underline;
+
+    }
 }
 
 [v-cloak] {

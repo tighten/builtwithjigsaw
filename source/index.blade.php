@@ -1,12 +1,19 @@
 @extends('_layouts.master')
 
-@section('body')
-<div class="mb-8 text-center text-grey-darkest">
-    <h2 class="font-thin mb-4 mt-20">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest underline hover:text-purple-dark">Jigsaw</a></h2>
+@section('hero')
+<div class="jigsaw-hero">
+    <h1 class="font-thin text-center mb-4">
+        The ultimate showcase <br>
+        of web sites built with Jigsaw.
+    </h1>
 
-    <p>Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.</p>
+    <p class="font-thin">
+        Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.
+    </p>
 </div>
+@endsection
 
+@section('body')
 <div id="websites" v-cloak>
     <div class="mt-1 pt-6 flex flex-wrap justify-center">
         {{--
