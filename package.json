@@ -5,6 +5,7 @@
         "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --progress --hide-modules --env=staging --config=node_modules/laravel-mix/setup/webpack.config.js",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --env=production --config=node_modules/laravel-mix/setup/webpack.config.js",
         "dev": "npm run local",
+        "prod": "npm run production",
         "watch": "npm run local -- --watch"
     },
     "devDependencies": {
@@ -22,5 +23,8 @@
         "vue-template-compiler": "^2.6.11",
         "webpack-watch": "^0.2.0",
         "yargs": "^4.6.0"
+    },
+    "dependencies": {
+        "laravel-mix-purgecss": "^5.0.0-rc.1"
     }
 }

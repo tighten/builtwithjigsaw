@@ -22,8 +22,8 @@
         <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" href="/assets/css/main.css">
-        <script src="/assets/js/main.js"></script>
+        <link rel="stylesheet" href="{{ mix('/css/main.css', 'assets/build') }}">
+        <script src="{{ mix('/js/main.js', 'assets/build') }}"></script>
 
         @include ('_partials.svgs')
     </head>
