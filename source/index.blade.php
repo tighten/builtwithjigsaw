@@ -2,7 +2,7 @@
 
 @section('body')
 <div class="mb-8 text-center text-grey-darkest">
-    <h2 class="font-thin mb-4 mt-20">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest underline hover:text-purple">Jigsaw</a></h2>
+    <h2 class="font-thin mb-4 mt-20">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest underline hover:text-purple-dark">Jigsaw</a></h2>
 
     <p>Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.</p>
 </div>
@@ -11,12 +11,12 @@
     <div class="text-center mt-8 pt-8 text-sm">
         <a
             @click="filterType('all')"
-            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple underline': type == 'all'}"
+            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
             >All Categories</a>
         <a
             v-for="color, thisType in colors"
             @click="filterType(thisType)"
-            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple underline': type == thisType}"
+            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
             >{| _.startCase(thisType) |}</a>
     </div>
     <div class="mt-1 pt-6 flex flex-wrap justify-center">

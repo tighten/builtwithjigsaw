@@ -19,7 +19,7 @@
                 {| site.title |}
             </a>
 
-            <div class="mb-4 text-grey-dark">by {| site.authors.join(', ') |}</div>
+            <div class="mb-4 text-grey-darker">by {| site.authors.join(', ') |}</div>
 
             <div class="mb-2">
                 <span
@@ -33,7 +33,7 @@
         <div class="bg-white flex text-sm border-t">
             <a
                 :href="site.url"
-                class="flex-1 no-underline hover:no-underline p-4 text-blue text-center hover:bg-blue hover:text-white"
+                class="flex-1 no-underline hover:no-underline p-4 text-blue-dark text-center hover:bg-blue hover:text-white"
                 >
                 <svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-website"/></svg>
                 Visit website
@@ -42,7 +42,7 @@
             <a
                 v-if="site.repo"
                 :href="site.repo"
-                class="flex-1 no-underline hover:no-underline p-4 text-blue text-center hover:bg-blue hover:text-white"
+                class="flex-1 no-underline hover:no-underline p-4 text-blue-dark text-center hover:bg-blue hover:text-white"
                 >
                 <svg width="12px" height="12px" class="mr-1"><use xlink:href="#icon-visit-repo"/></svg>
                 Visit repo

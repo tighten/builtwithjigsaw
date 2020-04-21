@@ -59,11 +59,11 @@
  */
 
 a {
-    @apply text-purple no-underline;
+    @apply text-purple-dark no-underline;
 }
 
 a:hover {
-    @apply text-purple-dark underline;
+    @apply text-purple-darker underline;
 }
 
 [v-cloak] {

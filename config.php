@@ -18,11 +18,11 @@ return [
         ],
     ],
     'typeColors' => [
-        'blog' => '#A5D66F',
-        'company' => '#956CC3',
-        'docs' => '#FFC248',
-        'meetup' => '#F8E71C', // @todo get real color
-        'personal' => '#589EE0',
-        'project' => '#50E3C2', // @todo get real color
+        'blog' => '#3f7703',
+        'company' => '#874ec5',
+        'docs' => '#bb5b04',
+        'meetup' => '#c10000',
+        'personal' => '#226bb1',
+        'project' => '#026773',
     ],
 ];
