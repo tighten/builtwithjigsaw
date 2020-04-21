@@ -31564,7 +31564,10 @@ __webpack_require__.r(__webpack_exports__);
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_lazyload__WEBPACK_IMPORTED_MODULE_1__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_lazyload__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  preLoad: 1.80952381 // 380x210
+
+});
 window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 /***/ }),
