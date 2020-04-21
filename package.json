@@ -25,6 +25,7 @@
         "yargs": "^4.6.0"
     },
     "dependencies": {
-        "laravel-mix-purgecss": "^5.0.0-rc.1"
+        "laravel-mix-purgecss": "^5.0.0-rc.1",
+        "vue-lazyload": "^1.3.3"
     }
 }

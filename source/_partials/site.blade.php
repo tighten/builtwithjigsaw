@@ -9,7 +9,7 @@
 --}}
 <div class="flex m-2 shadow hover:shadow-md" style="width: 380px;">
     <div class="flex-1">
-        <a :href="site.url" class="block"><img :src="site.image" alt="Web site screenshot" class="block border"></a>
+        <a :href="site.url" class="block"><img v-lazy="site.image" alt="Web site screenshot" class="block border"></a>
 
         <div class="bg-white px-6 py-4 text-sm">
             <a
