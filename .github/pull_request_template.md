@@ -1,5 +1,7 @@
-- [ ] This is adding something else
+Description here.
+
 - [ ] This is adding a new web site to BuiltWithJigsaw
+- [ ] This is not a new web site, but something else 
 
 If this is adding a new web site:
 
