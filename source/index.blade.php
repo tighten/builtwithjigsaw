@@ -15,6 +15,17 @@
 
 @section('body')
 <div id="websites" v-cloak>
+    <div class="text-center mt-8 pt-8 text-sm">
+        <a
+                @click="filterType('all')"
+                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
+        >All Categories</a>
+        <a
+                v-for="color, thisType in colors"
+                @click="filterType(thisType)"
+                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
+        >{| _.startCase(thisType) |}</a>
+    </div>
     <div class="mt-1 pt-6 flex flex-wrap justify-center">
         {{--
             If you're coming across this codebase for the first time, you might be

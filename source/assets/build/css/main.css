@@ -6335,35 +6335,48 @@ table {
  */
 
 a {
-  color: #794acf;
+  color: #9561e2;
   text-decoration: none;
 }
 
 a:hover {
-  color: #382b5f;
+  color: #794acf;
   text-decoration: underline;
 }
 
 .article {
   background-color: #fff;
   border-width: 1px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 12rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-left: .5rem;
   margin-right: .5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: .25rem;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   width: 380px;
+}
+
+.jigsaw-hero {
+  background: url('/assets/images/jigsaw-outline.svg');
+  min-height: 175px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  width: 100%;
+}
+
+.jigsaw-hero a {
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
 }
 
 [v-cloak] {
