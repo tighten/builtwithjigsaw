@@ -78,7 +78,7 @@
                 this.type = type;
             },
             displayAllArticles: function(type) {
-                let articles = document.getElementsByClassName('hidden article');
+                let articles = [...document.getElementsByClassName('hidden article')];
 
                 for (let article of articles) {
                     article.classList.replace('hidden', 'flex');
