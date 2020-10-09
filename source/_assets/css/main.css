@@ -69,17 +69,11 @@ a {
 }
 
 .article {
-    @apply bg-white;
-    @apply border;
-    @apply flex-col;
-    @apply h-48;
-    @apply justify-between;
-    @apply mx-2;
-    @apply my-4;
-    @apply p-4;
-    @apply rounded;
-    @apply shadow;
     width: 380px;
+}
+
+.author {
+    bottom: 20px;
 }
 
 .jigsaw-hero {

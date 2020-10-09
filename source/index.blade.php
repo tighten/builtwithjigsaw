@@ -38,28 +38,17 @@
             @include ('_partials.site')
         </div>
     </div>
-    <div class="text-center mt-8 pt-8 text-sm">
-        <a
-                @click="filterType('all')"
-                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple underline': type == 'all'}"
-        >All Categories</a>
-        <a
-                v-for="color, thisType in colors"
-                @click="filterType(thisType)"
-                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple underline': type == thisType}"
-        >{| _.startCase(thisType) |}</a>
-    </div>
 
     <div id="articles" class="mt-8 pt-8">
-        <h2 class="font-normal text-grey-darkest mb-4">Recent Articles</h2>
+        <h2 class="font-normal text-grey-darkest mb-4 ml-2">Recent Articles</h2>
 
-        <div class="flex flex-wrap -mx-2">
+        <div class="flex flex-wrap -mx-2 justify-center lg:justify-start">
             @foreach ($articles as $article)
-            <div class="{{ $loop->index > 2 ? 'hidden' : 'flex' }} article h-48 flex-col justify-between bg-white border shadow md:mx-2 my-4 p-4" style="width: 380px;">
-                <span class="text-grey-dark">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
-                <a href="{{ $article->url }}" class="text-lg text-blue">{{ $article->title }}</a><br>
-                <span class="text-grey-dark">by {{ $article->author }}</span>
-            </div>
+            <a href="{{ $article->url }}" class="{{ $loop->index > 2 ? 'hidden' : 'flex' }} article h-48 flex-col bg-white border shadow md:mx-2 my-4 p-4 hover:no-underline hover:shadow-lg justify-start relative">
+                <span class="text-sm text-grey-darker mb-3">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
+                <span class="text-lg text-blue-dark">{{ $article->title }}</span>
+                <span class="absolute text-sm text-grey-darker author">by {{ $article->author }}</span>
+            </a>
             @endforeach
         </div>
 
