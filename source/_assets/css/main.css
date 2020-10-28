@@ -59,11 +59,42 @@
  */
 
 a {
-    @apply text-purple-dark no-underline;
+    @apply text-purple;
+    @apply no-underline;
+
+    &:hover {
+        @apply text-purple-dark;
+        @apply underline;
+    }
 }
 
-a:hover {
-    @apply text-purple-darker underline;
+.article {
+    width: 380px;
+}
+
+.author {
+    bottom: 20px;
+}
+
+.jigsaw-hero {
+    background: url('/assets/images/jigsaw-outline.svg');
+    min-height: 175px;
+
+    @apply bg-cover;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply justify-center;
+    @apply mb-8;
+    @apply text-white;
+    @apply w-full;
+
+    a {
+        @apply font-normal;
+        @apply text-white;
+        @apply no-underline;
+
+    }
 }
 
 [v-cloak] {

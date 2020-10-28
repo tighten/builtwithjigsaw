@@ -1,23 +1,30 @@
 @extends('_layouts.master')
 
-@section('body')
-<div class="mb-8 text-center text-grey-darkest">
-    <h2 class="font-thin mb-4 mt-20">The ultimate showcase of web sites built with <a href="http://jigsaw.tighten.co/" class="text-grey-darkest underline hover:text-purple-dark">Jigsaw</a></h2>
+@section('hero')
+<div class="jigsaw-hero">
+    <h1 class="font-thin text-center mb-4">
+        The ultimate showcase <br>
+        of web sites built with Jigsaw.
+    </h1>
 
-    <p>Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.</p>
+    <p class="font-thin">
+        Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.
+    </p>
 </div>
+@endsection
 
+@section('body')
 <div id="websites" v-cloak>
     <div class="text-center mt-8 pt-8 text-sm">
         <a
-            @click="filterType('all')"
-            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
-            >All Categories</a>
+                @click="filterType('all')"
+                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
+        >All Categories</a>
         <a
-            v-for="color, thisType in colors"
-            @click="filterType(thisType)"
-            :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
-            >{| _.startCase(thisType) |}</a>
+                v-for="color, thisType in colors"
+                @click="filterType(thisType)"
+                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
+        >{| _.startCase(thisType) |}</a>
     </div>
     <div class="mt-1 pt-6 flex flex-wrap justify-center">
         {{--
@@ -31,49 +38,61 @@
             @include ('_partials.site')
         </div>
     </div>
-</div>
 
-<div id="articles" class="mt-8 pt-8">
-    <h2 class="mb-4">Recent Articles</h2>
+    <div id="articles" class="mt-8 pt-8">
+        <h2 class="font-normal text-grey-darkest mb-4 ml-2">Recent Articles</h2>
 
-    <ul>
-    @foreach ($articles as $article)
-        <li class="mb-4">
-            <a href="{{ $article->url }}">{{ $article->title }}</a><br>
-            <span class="text-grey-darker">by {{ $article->author }} on {{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
-        </li>
-    @endforeach
-    </ul>
+        <div class="flex flex-wrap -mx-2 justify-center lg:justify-start">
+            @foreach ($articles as $article)
+            <a href="{{ $article->url }}" class="{{ $loop->index > 2 ? 'hidden' : 'flex' }} article h-48 flex-col bg-white border shadow md:mx-2 my-4 p-4 hover:no-underline hover:shadow-lg justify-start relative">
+                <span class="text-sm text-grey-darker mb-3">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
+                <span class="text-lg text-blue-dark">{{ $article->title }}</span>
+                <span class="absolute text-sm text-grey-darker author">by {{ $article->author }}</span>
+            </a>
+            @endforeach
+        </div>
+
+        <button
+            class="block bg-white rounded border text-purple focus:outline-none shadow mx-auto my-4 px-6 py-4"
+            @click="displayAllArticles"
+        >View all articles</button>
+    </div>
 </div>
 
 <script>
-new Vue({
-    delimiters: ['{|', '|}'],
-    data: {
-        // Here we use Laravel Blade's json directive to take our sites,
-        // map over them to output the custom image for each, and then
-        // JSON-encode them and pass them into Vue.
-        sites: @json($sites->values()->map(function ($site) {
+    new Vue({
+        delimiters: ['{|', '|}'],
+        data: {
+            // Here we use Laravel Blade's json directive to take our sites,
+            // map over them to output the custom image for each, and then
+            // JSON-encode them and pass them into Vue.
+            sites: @json($sites->values()->map(function($site) {
                 $site['image'] = $site->image();
                 return $site;
-            })
-        ),
-        colors: @json($page->typeColors),
-        type: 'all',
-    },
-    methods: {
-        filterType: function (type) {
-            this.type = type;
+            })),
+            colors: @json($page->typeColors),
+            type: 'all',
         },
-    },
-    computed: {
-        filteredSites() {
-            return this.type === 'all' ?
-                this.sites :
-                this.sites.filter(site => site.types.includes(this.type));
+        methods: {
+            filterType: function(type) {
+                this.type = type;
+            },
+            displayAllArticles: function(type) {
+                let articles = [...document.getElementsByClassName('hidden article')];
+
+                for (let article of articles) {
+                    article.classList.replace('hidden', 'flex');
+                }
+            },
+        },
+        computed: {
+            filteredSites() {
+                return this.type === 'all' ?
+                    this.sites :
+                    this.sites.filter(site => site.types.includes(this.type));
+            }
         }
-    }
-}).$mount('#websites');
+    }).$mount('#websites');
 </script>
 
 @endsection

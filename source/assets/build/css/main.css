@@ -6335,13 +6335,40 @@ table {
  */
 
 a {
-  color: #794acf;
+  color: #9561e2;
   text-decoration: none;
 }
 
 a:hover {
-  color: #382b5f;
+  color: #794acf;
   text-decoration: underline;
+}
+
+.article {
+  width: 380px;
+}
+
+.author {
+  bottom: 20px;
+}
+
+.jigsaw-hero {
+  background: url('/assets/images/jigsaw-outline.svg');
+  min-height: 175px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  width: 100%;
+}
+
+.jigsaw-hero a {
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
 }
 
 [v-cloak] {

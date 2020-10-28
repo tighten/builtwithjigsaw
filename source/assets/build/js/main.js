@@ -31579,8 +31579,8 @@ window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mattstauffer/Sites/builtwithjigsaw/source/_assets/js/main.js */"./source/_assets/js/main.js");
-module.exports = __webpack_require__(/*! /Users/mattstauffer/Sites/builtwithjigsaw/source/_assets/css/main.css */"./source/_assets/css/main.css");
+__webpack_require__(/*! /Users/alison/Documents/GitHub/builtwithjigsaw/source/_assets/js/main.js */"./source/_assets/js/main.js");
+module.exports = __webpack_require__(/*! /Users/alison/Documents/GitHub/builtwithjigsaw/source/_assets/css/main.css */"./source/_assets/css/main.css");
 
 
 /***/ })
