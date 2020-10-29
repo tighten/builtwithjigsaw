@@ -2,7 +2,7 @@
 
 @section('hero')
 <div class="jigsaw-hero">
-    <h1 class="font-thin text-center mb-4">
+    <h1 class="mb-4 font-thin text-center">
         The ultimate showcase <br>
         of web sites built with Jigsaw.
     </h1>
@@ -14,48 +14,51 @@
 @endsection
 
 @section('body')
-<div id="websites" v-cloak>
-    <div class="text-center mt-8 pt-8 text-sm">
-        <a
-                @click="filterType('all')"
-                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
-        >All Categories</a>
-        <a
-                v-for="color, thisType in colors"
-                @click="filterType(thisType)"
-                :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
-        >{| _.startCase(thisType) |}</a>
-    </div>
-    <div class="mt-1 pt-6 flex flex-wrap justify-center">
-        {{--
-            If you're coming across this codebase for the first time, you might be
-            surprised to see v-for here instead of Blade's @foreach.
+<div id="main" v-cloak>
+    <div id="articles" class="pt-8 mt-8">
+        <h2 class="mb-4 ml-2 font-normal text-grey-darkest">Recent Articles</h2>
 
-            Take a look at resources/views/_partials/site.blade.php to see some
-            more notes about how we set this up, and why.
-        --}}
-        <div v-for="site in filteredSites">
-            @include ('_partials.site')
-        </div>
-    </div>
-
-    <div id="articles" class="mt-8 pt-8">
-        <h2 class="font-normal text-grey-darkest mb-4 ml-2">Recent Articles</h2>
-
-        <div class="flex flex-wrap -mx-2 justify-center lg:justify-start">
+        <div class="flex flex-wrap justify-center -mx-2 lg:justify-start">
             @foreach ($articles as $article)
-            <a href="{{ $article->url }}" class="{{ $loop->index > 2 ? 'hidden' : 'flex' }} article h-48 flex-col bg-white border shadow md:mx-2 my-4 p-4 hover:no-underline hover:shadow-lg justify-start relative">
-                <span class="text-sm text-grey-darker mb-3">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
-                <span class="text-lg text-blue-dark">{{ $article->title }}</span>
-                <span class="absolute text-sm text-grey-darker author">by {{ $article->author }}</span>
-            </a>
+                <a href="{{ $article->url }}" class="{{ $loop->index > 2 ? 'hidden' : 'flex' }} article h-48 flex-col bg-white border shadow md:mx-2 my-4 p-4 hover:no-underline hover:shadow-lg justify-start relative">
+                    <span class="mb-3 text-sm text-grey-darker">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
+                    <span class="text-lg text-blue-dark">{{ $article->title }}</span>
+                    <span class="absolute text-sm text-grey-darker author">by {{ $article->author }}</span>
+                </a>
             @endforeach
         </div>
 
         <button
-            class="block bg-white rounded border text-purple focus:outline-none shadow mx-auto my-4 px-6 py-4"
-            @click="displayAllArticles"
+                class="block px-6 py-4 mx-auto my-4 bg-white border rounded shadow text-purple focus:outline-none"
+                @click="displayAllArticles"
+                id="articleDisplayButton"
         >View all articles</button>
+    </div>
+
+    <div id="websites">
+        <div class="pt-8 mt-8 text-sm text-center">
+            <a
+                    @click="filterType('all')"
+                    :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
+            >All Categories</a>
+            <a
+                    v-for="color, thisType in colors"
+                    @click="filterType(thisType)"
+                    :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
+            >{| _.startCase(thisType) |}</a>
+        </div>
+        <div class="flex flex-wrap justify-center pt-6 mt-1">
+            {{--
+                If you're coming across this codebase for the first time, you might be
+                surprised to see v-for here instead of Blade's @foreach.
+
+                Take a look at resources/views/_partials/site.blade.php to see some
+                more notes about how we set this up, and why.
+            --}}
+            <div v-for="site in filteredSites">
+                @include('_partials.site')
+            </div>
+        </div>
     </div>
 </div>
 
@@ -83,6 +86,7 @@
                 for (let article of articles) {
                     article.classList.replace('hidden', 'flex');
                 }
+                document.getElementById('articleDisplayButton').classList.add('hidden');
             },
         },
         computed: {
@@ -92,7 +96,7 @@
                     this.sites.filter(site => site.types.includes(this.type));
             }
         }
-    }).$mount('#websites');
+    }).$mount('#main');
 </script>
 
 @endsection
