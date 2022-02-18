@@ -1,5 +1,5 @@
 /build_*/
 /cache/
 /node_modules/
-# /source/assets/build/
+/source/assets/build/
 /vendor/
