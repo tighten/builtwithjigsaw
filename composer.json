@@ -1,5 +1,11 @@
 {
     "require": {
         "tightenco/jigsaw": "^1.2"
-    }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
