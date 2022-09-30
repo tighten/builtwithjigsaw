@@ -40,14 +40,13 @@ class MakeThumbnailCommand extends Command
             Browsershot::url($url)
                 ->blockDomains(['googletagmanager.com', 'googlesyndication.com', 'doubleclick.net', 'google-analytics.com'])
                 ->waitUntilNetworkIdle()
-                ->windowSize(1280, 720)
-                ->fit(Manipulations::FIT_CONTAIN, 380, 210)
-                ->save(public_path("assets/images/sites/{$site}_auto.png"));
                 // ->windowSize(1280, 720)
                 // ->setScreenshotType('jpeg', 100)
-                // ->save(public_path("assets/images/sites/{$site}_1280x720.jpeg"));
+                ->windowSize(1280, 720)
+                ->fit(Manipulations::FIT_CONTAIN, 380, 210)
+                ->save(public_path($path = "assets/images/sites/{$site}.png"));
 
-            $this->console->info("Thumbnail saved to _source/assets/images/sites/{$site}_auto.png");
+            $this->console->info("Thumbnail saved to {$path}");
         } catch (Throwable $e) {
             $this->console->error($e->getMessage());
 
