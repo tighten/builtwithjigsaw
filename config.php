@@ -6,7 +6,7 @@ return [
     'collections' => [
         'sites' => [
             'path' => 'sites',
-            'sort' => ['-added'],
+            'sort' => '-added',
             'image' => function ($site) {
                 $imagePath = '/assets/images/sites/' . $site->_meta->filename . '.png';
                 return file_exists(getcwd() . '/source' . $imagePath) ? $imagePath : '/assets/images/blank-site.png';
@@ -14,7 +14,7 @@ return [
         ],
         'articles' => [
             'path' => 'articles',
-            'sort' => ['-published'],
+            'sort' => '-published',
         ],
     ],
     'typeColors' => [
