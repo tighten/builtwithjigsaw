@@ -1,100 +1,12 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
- */
-@tailwind preflight;
-
-/**
- * This injects any component classes registered by plugins.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/components";
- */
+@tailwind base;
 @tailwind components;
-
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
-
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/utilities";
- */
 @tailwind utilities;
 
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
-
 a {
-    @apply text-purple;
-    @apply no-underline;
-
-    &:hover {
-        @apply text-purple-dark;
-        @apply underline;
-    }
+    @apply text-purple-600;
 }
-
-.article {
-    width: 380px;
-}
-
-.author {
-    bottom: 20px;
-}
-
-.jigsaw-hero {
-    background: url('/assets/images/jigsaw-outline.svg');
-    min-height: 175px;
-
-    @apply bg-cover;
-    @apply flex;
-    @apply flex-col;
-    @apply items-center;
-    @apply justify-center;
-    @apply mb-8;
-    @apply text-white;
-    @apply w-full;
-
-    a {
-        @apply font-normal;
-        @apply text-white;
-        @apply no-underline;
-
-    }
+a:hover {
+    @apply text-purple-700 underline;
 }
 
 [v-cloak] {

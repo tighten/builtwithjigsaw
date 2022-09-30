@@ -29,7 +29,7 @@
 
         @include ('_partials.svgs')
     </head>
-    <body class="bg-grey-lightest text-grey-darker">
+    <body class="bg-gray-50 text-gray-800">
         @include ('_partials.header')
 
         @yield('hero')
@@ -47,7 +47,6 @@
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-
                 gtag('config', 'UA-53203205-6');
             </script>
         @endif

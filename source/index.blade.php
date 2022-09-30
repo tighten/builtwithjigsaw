@@ -1,14 +1,13 @@
 @extends('_layouts.master')
 
 @section('hero')
-<div class="jigsaw-hero">
-    <h1 class="mb-4 font-thin text-center">
-        The ultimate showcase <br>
-        of web sites built with Jigsaw.
+<div class="[background-image:url('/assets/images/jigsaw-outline.svg')] flex flex-col items-center justify-center w-full min-h-[175px] mb-8 text-white bg-cover">
+    <h1 class="mb-4 text-3xl font-extralight text-center">
+        The ultimate showcase <br>of web sites built with Jigsaw.
     </h1>
 
-    <p class="font-thin">
-        Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.
+    <p class="font-extralight">
+        Browse <a href="#websites" class="font-normal text-white">website inspiration</a>, find <a href="#articles" class="font-normal text-white">articles</a>, or <a href="/get-featured" class="font-normal text-white">get featured</a>.
     </p>
 </div>
 @endsection
@@ -16,36 +15,42 @@
 @section('body')
 <div id="main" v-cloak>
     <div id="articles" class="pt-8 mt-8">
-        <h2 class="mb-4 ml-2 font-normal text-grey-darkest">Recent Articles</h2>
+        <h2 class="mb-4 ml-2 text-2xl text-gray-800">Recent Articles</h2>
 
         <div class="flex flex-wrap justify-center -mx-2 lg:justify-start">
             @foreach ($articles as $article)
-                <a href="{{ $article->url }}" class="{{ $loop->index > 2 ? 'hidden' : 'flex' }} article h-48 flex-col bg-white border shadow md:mx-2 my-4 p-4 hover:no-underline hover:shadow-lg justify-start relative">
-                    <span class="mb-3 text-sm text-grey-darker">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
-                    <span class="text-lg text-blue-dark">{{ $article->title }}</span>
-                    <span class="absolute text-sm text-grey-darker author">by {{ $article->author }}</span>
+                <a href="{{ $article->url }}" class="article relative {{ $loop->index > 2 ? 'hidden' : 'flex' }} flex-col justify-start w-[380px] h-48 p-4 my-4 md:mx-2 bg-white border hover:no-underline shadow hover:shadow-lg">
+                    <span class="mb-3 text-sm text-gray-600">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
+                    <span class="text-lg text-sky-600">{{ $article->title }}</span>
+                    <span class="absolute text-sm text-gray-600 bottom-[20px]">by {{ $article->author }}</span>
                 </a>
             @endforeach
         </div>
 
         <button
-                class="block px-6 py-4 mx-auto my-4 bg-white border rounded shadow text-purple focus:outline-none"
-                @click="displayAllArticles"
-                id="articleDisplayButton"
-        >View all articles</button>
+            class="block px-6 py-3 mx-auto my-4 text-purple-600 bg-white border rounded shadow focus:outline-none"
+            @click="displayAllArticles"
+            id="articleDisplayButton"
+        >
+            View all articles
+        </button>
     </div>
 
     <div id="websites">
         <div class="pt-8 mt-8 text-sm text-center">
-            <a
-                    @click="filterType('all')"
-                    :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
-            >All Categories</a>
-            <a
-                    v-for="color, thisType in colors"
-                    @click="filterType(thisType)"
-                    :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
-            >{| _.startCase(thisType) |}</a>
+            <button
+                :class="['inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-gray-800 hover:text-purple-800 hover:underline', { '!text-purple-800 underline': type === 'all' }]"
+                @click="filterType('all')"
+            >
+                All Categories
+            </button>
+            <button
+                v-for="color, thisType in colors"
+                @click="filterType(thisType)"
+                :class="['inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-gray-800 hover:text-purple-800 hover:underline', { '!text-purple-800 underline': type === thisType }]"
+            >
+                {| _.startCase(thisType) |}
+            </button>
         </div>
         <div class="flex flex-wrap justify-center pt-6 mt-1">
             {{--

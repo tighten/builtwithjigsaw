@@ -1,28 +1,18 @@
 <div class="bg-white shadow">
     <div class="container mx-auto">
-        <div class="flex items-center justify-between flex-wrap px-6 py-3">
-            <a href="/" class="flex items-center flex-no-shrink no-underline text-grey-darker">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 px-6 py-3">
+            <a href="/" class="flex items-center shrink-0 text-gray-600">
                 <div class="h-10 w-10 mr-3">
-                    <img src="/assets/images/jigsaw-logo.svg" alt="Jigsaw logo.">
+                    <img src="/assets/images/jigsaw-logo.svg" alt="Jigsaw logo">
                 </div>
 
-                <h1 class="uppercase text-sm tracking-wide font-normal">
-                    Built with Jigsaw
-                </h1>
+                <h1 class="uppercase text-sm tracking-wide">Built with Jigsaw</h1>
             </a>
 
-            <div class="w-full block lg:flex lg:justify-end lg:items-center lg:w-auto">
-                <a href="/#websites" class="block mt-4 lg:inline-block lg:mt-0 mr-8">
-                    Websites
-                </a>
-
-                <a href="/#articles" class="block mt-4 lg:inline-block lg:mt-0 mr-8">
-                    Articles
-                </a>
-
-                <a href="/get-featured" class="block mt-4 lg:inline-block lg:mt-0">
-                    Get featured
-                </a>
+            <div class="flex flex-col lg:flex-row lg:justify-end lg:items-center lg:mt-0 gap-4 lg:gap-8">
+                <a href="/#websites">Websites</a>
+                <a href="/#articles">Articles</a>
+                <a href="/get-featured">Get featured</a>
             </div>
         </div>
     </div>
