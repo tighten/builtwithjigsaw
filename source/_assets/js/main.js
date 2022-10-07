@@ -1,10 +1,6 @@
-window._ = require('lodash');
+import Alpine from 'alpinejs';
+import LazyLoad from 'vanilla-lazyload';
 
-import Vue from 'vue';
-import VueLazyload from 'vue-lazyload';
+const ll = new LazyLoad();
 
-Vue.use(VueLazyload, {
-    preLoad: 1.80952381, // 380x210
-});
-
-window.Vue = Vue;
+Alpine.start();

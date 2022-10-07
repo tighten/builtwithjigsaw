@@ -12,7 +12,7 @@
         <meta property="og:title" content="Built With Jigsaw">
         <meta property="og:description" content="A collection of sites, apps, & articles about/around the Jigsaw static site generator">
         <meta property="og:type" content="website">
-        <meta property="og:image" content="{{ $page->baseUrl }}assets/images/builtwithjigsaw-og.jpg">
+        <meta property="og:image" content="{{ $page->baseUrl }}/assets/images/builtwithjigsaw-og.jpg">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
         <meta property="og:url" content="{{ $page->baseUrl }}">
@@ -25,7 +25,7 @@
         <meta name="theme-color" content="#ffffff">
 
         <link rel="stylesheet" href="{{ mix('/css/main.css', 'assets/build') }}">
-        <script src="{{ mix('/js/main.js', 'assets/build') }}"></script>
+        <script defer src="{{ mix('/js/main.js', 'assets/build') }}"></script>
 
         @include ('_partials.svgs')
     </head>
@@ -34,7 +34,7 @@
 
         @yield('hero')
 
-        <div class="container mx-auto">
+        <div class="container 2xl:max-w-screen-xl mx-auto space-y-12">
             @yield('body')
 
             @include ('_partials.footer')

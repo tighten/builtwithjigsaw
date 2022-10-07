@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-    @apply text-purple-600;
-}
-a:hover {
-    @apply text-purple-700 underline;
-}
-
-[v-cloak] {
+[x-cloak] {
     display: none;
 }
