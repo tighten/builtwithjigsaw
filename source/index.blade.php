@@ -1,102 +1,71 @@
 @extends('_layouts.master')
 
 @section('hero')
-<div class="jigsaw-hero">
-    <h1 class="mb-4 font-thin text-center">
-        The ultimate showcase <br>
-        of web sites built with Jigsaw.
+<div class="[background-image:url('/assets/images/jigsaw-outline.svg')] flex flex-col items-center justify-center w-full min-h-[175px] mb-12 text-white bg-cover">
+    <h1 class="mb-4 text-4xl font-extralight text-center">
+        The ultimate showcase <br>of web sites built with Jigsaw.
     </h1>
 
-    <p class="font-thin">
-        Browse <a href="#websites">website inspiration</a>, find <a href="#articles">articles</a>, or <a href="/get-featured">get featured</a>.
+    <p class="font-extralight">
+        Browse <a href="#websites" class="font-normal text-white">website inspiration</a>, find <a href="#articles" class="font-normal text-white">articles</a>, or <a href="/get-featured" class="font-normal text-white">get featured</a>.
     </p>
 </div>
 @endsection
 
 @section('body')
-<div id="main" v-cloak>
-    <div id="articles" class="pt-8 mt-8">
-        <h2 class="mb-4 ml-2 font-normal text-grey-darkest">Recent Articles</h2>
+<div class="space-y-12">
+    <section x-data="{ all: false }" id="articles">
+        <h2 class="mb-4 text-2xl text-gray-800">Recent Articles</h2>
 
-        <div class="flex flex-wrap justify-center -mx-2 lg:justify-start">
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-6">
             @foreach ($articles as $article)
-                <a href="{{ $article->url }}" class="{{ $loop->index > 2 ? 'hidden' : 'flex' }} article h-48 flex-col bg-white border shadow md:mx-2 my-4 p-4 hover:no-underline hover:shadow-lg justify-start relative">
-                    <span class="mb-3 text-sm text-grey-darker">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
-                    <span class="text-lg text-blue-dark">{{ $article->title }}</span>
-                    <span class="absolute text-sm text-grey-darker author">by {{ $article->author }}</span>
-                </a>
+                <div x-cloak x-show="{{ $loop->index <= 2 ? 'true' : 'all' }}" class="relative flex flex-col justify-items-start h-48 p-4 bg-white border shadow hover:shadow-lg rounded transition">
+                    <span class="text-sm text-gray-600">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
+                    <a href="{{ $article->url }}" class="mt-3 text-lg text-sky-600">
+                        {{ $article->title }}
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                    </a>
+                    <span class="mt-auto text-sm text-gray-600">by {{ $article->author }}</span>
+                </div>
             @endforeach
         </div>
 
         <button
-                class="block px-6 py-4 mx-auto my-4 bg-white border rounded shadow text-purple focus:outline-none"
-                @click="displayAllArticles"
-                id="articleDisplayButton"
-        >View all articles</button>
-    </div>
+            x-show="!all"
+            x-on:click="all = true"
+            class="block px-6 py-3 mx-auto my-6 text-purple-600 bg-white border shadow rounded focus-visible:outline-none focus-visible:ring-2 transition"
+            type="button"
+        >
+            View all articles
+        </button>
+    </section>
 
-    <div id="websites">
-        <div class="pt-8 mt-8 text-sm text-center">
-            <a
-                    @click="filterType('all')"
-                    :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == 'all'}"
-            >All Categories</a>
-            <a
-                    v-for="color, thisType in colors"
-                    @click="filterType(thisType)"
-                    :class="{'cursor-pointer inline-block pb-2 px-2 md:px-4 lg:px-8 lg:mx-4 text-grey-darkest': true, 'text-purple-dark underline': type == thisType}"
-            >{| _.startCase(thisType) |}</a>
+    <section x-data="{ type: 'all' }" id="websites" class="space-y-8">
+        <div class="text-sm text-center">
+            <button
+                x-on:click="type = 'all'"
+                x-bind:class="{ '!text-purple-800 underline': type === 'all' }"
+                class="p-2 md:p-4 lg:mx-4 text-gray-800 hover:text-purple-800 hover:underline transition"
+                type="button"
+            >
+                All Categories
+            </button>
+            @foreach ($page->typeColors as $type => $color)
+                <button
+                    x-on:click="type = @js($type)"
+                    x-bind:class="{ '!text-purple-800 underline': type === @js($type) }"
+                    class="p-2 md:p-4 lg:mx-4 text-gray-800 hover:text-purple-800 hover:underline transition"
+                    type="button"
+                >
+                    {{ \Illuminate\Support\Str::title($type) }}
+                </button>
+            @endforeach
         </div>
-        <div class="flex flex-wrap justify-center pt-6 mt-1">
-            {{--
-                If you're coming across this codebase for the first time, you might be
-                surprised to see v-for here instead of Blade's @foreach.
-
-                Take a look at resources/views/_partials/site.blade.php to see some
-                more notes about how we set this up, and why.
-            --}}
-            <div v-for="site in filteredSites">
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-6">
+            @foreach ($sites as $site)
                 @include('_partials.site')
-            </div>
+            @endforeach
         </div>
-    </div>
+    </section>
 </div>
-
-<script>
-    new Vue({
-        delimiters: ['{|', '|}'],
-        data: {
-            // Here we use Laravel Blade's json directive to take our sites,
-            // map over them to output the custom image for each, and then
-            // JSON-encode them and pass them into Vue.
-            sites: @json($sites->values()->map(function($site) {
-                $site['image'] = $site->image();
-                return $site;
-            })),
-            colors: @json($page->typeColors),
-            type: 'all',
-        },
-        methods: {
-            filterType: function(type) {
-                this.type = type;
-            },
-            displayAllArticles: function(type) {
-                let articles = [...document.getElementsByClassName('hidden article')];
-
-                for (let article of articles) {
-                    article.classList.replace('hidden', 'flex');
-                }
-                document.getElementById('articleDisplayButton').classList.add('hidden');
-            },
-        },
-        computed: {
-            filteredSites() {
-                return this.type === 'all' ?
-                    this.sites :
-                    this.sites.filter(site => site.types.includes(this.type));
-            }
-        }
-    }).$mount('#main');
-</script>
-
 @endsection

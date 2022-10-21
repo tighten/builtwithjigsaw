@@ -1,4 +1,5 @@
-<div class="text-sm px-4 my-8 pt-8 border-t border-grey-light text-center text-grey-darker">
-    <p><a href="http://jigsaw.tighten.co/" class="no-underline text-grey-darkest">Jigsaw</a> is a static site generator brought to you by <a href="https://tighten.co/" class="no-underline text-grey-darkest">Tighten</a>.</p>
-    <p class="text-xs mt-4">This site is <a href="https://github.com/tighten/builtwithjigsaw" class="no-underline text-grey-darkest">open source on GitHub</a>.</p>
+<div class="py-8 text-sm text-center text-gray-600 border-t">
+    <p><a href="https://jigsaw.tighten.com" class="text-gray-900 hover:text-purple-900 hover:underline transition">Jigsaw</a> is a static site generator brought to you by <a href="https://tighten.com" class="text-gray-900 hover:text-purple-900 hover:underline transition">Tighten</a>.</p>
+
+    <p class="text-xs mt-4">This site is <a href="https://github.com/tighten/builtwithjigsaw" class="text-gray-900 hover:text-purple-900 hover:underline transition">open source on GitHub</a>.</p>
 </div>
