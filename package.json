@@ -8,7 +8,7 @@
     "devDependencies": {
         "alpinejs": "^3.10.3",
         "autoprefixer": "^10.4.12",
-        "browser-sync": "^2.27.11",
+        "browser-sync": "^2.29.1",
         "browser-sync-webpack-plugin": "^2.3.0",
         "laravel-mix": "^6.0.49",
         "laravel-mix-jigsaw": "^2.0.0",
