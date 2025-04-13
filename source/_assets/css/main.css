@@ -1,7 +1,9 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
+
+@config "../../../tailwind.config.js";
 
 @utility container {
-  padding-inline: 2rem;
+    padding-inline: 2rem;
 }
 
 /*
@@ -13,13 +15,13 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
 }
 
 [x-cloak] {
