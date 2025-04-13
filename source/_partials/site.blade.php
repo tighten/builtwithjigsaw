@@ -1,4 +1,4 @@
-<div x-show="[...@js($site->types), 'all'].includes(type)" class="shadow hover:shadow-md rounded transition overflow-hidden">
+<div x-show="[...@js($site->types), 'all'].includes(type)" class="shadow-sm hover:shadow-md rounded-sm transition overflow-hidden">
     <a href="{{ $site->url }}" class="block w-full">
         <img
             class="lazy block w-full border"
@@ -20,7 +20,7 @@
                 <button
                     x-on:click="type = @js($type)"
                     style="background: {{ $page->typeColors[$type] ?? '' }};"
-                    class="px-2 py-1 text-xs text-white rounded"
+                    class="px-2 py-1 text-xs text-white rounded-sm"
                     type="button"
                 >
                     {{ \Illuminate\Support\Str::title($type) }}

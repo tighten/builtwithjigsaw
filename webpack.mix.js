@@ -6,5 +6,5 @@ mix.disableSuccessNotifications().setPublicPath('source/assets/build');
 mix.jigsaw()
     .browserSync({ server: 'build_local', files: ['build_local/**'] })
     .js('source/_assets/js/main.js', 'js')
-    .css('source/_assets/css/main.css', 'css', [require('tailwindcss')])
+    .postCss('source/_assets/css/main.css', 'css', [require('@tailwindcss/postcss')])
     .version();

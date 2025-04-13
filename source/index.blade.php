@@ -19,7 +19,7 @@
 
         <div class="grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-6">
             @foreach ($articles as $article)
-                <div x-cloak x-show="{{ $loop->index <= 2 ? 'true' : 'all' }}" class="relative flex flex-col justify-items-start h-48 p-4 bg-white border shadow hover:shadow-lg rounded transition">
+                <div x-cloak x-show="{{ $loop->index <= 2 ? 'true' : 'all' }}" class="relative flex flex-col justify-items-start h-48 p-4 bg-white border shadow-sm hover:shadow-lg rounded-sm transition">
                     <span class="text-sm text-gray-600">{{ DateTime::createFromFormat('U', $article->published)->format('M d, Y') }}</span>
                     <a href="{{ $article->url }}" class="mt-3 text-lg text-sky-600">
                         {{ $article->title }}
@@ -33,7 +33,7 @@
         <button
             x-show="!all"
             x-on:click="all = true"
-            class="block px-6 py-3 mx-auto my-6 text-purple-600 bg-white border shadow rounded focus-visible:outline-none focus-visible:ring-2 transition"
+            class="block px-6 py-3 mx-auto my-6 text-purple-600 bg-white border shadow-sm rounded-sm focus-visible:outline-hidden focus-visible:ring-2 transition"
             type="button"
         >
             View all articles
@@ -44,7 +44,7 @@
         <div class="text-sm text-center">
             <button
                 x-on:click="type = 'all'"
-                x-bind:class="{ '!text-purple-800 underline': type === 'all' }"
+                x-bind:class="{ 'text-purple-800! underline': type === 'all' }"
                 class="p-2 md:p-4 lg:mx-4 text-gray-800 hover:text-purple-800 hover:underline transition"
                 type="button"
             >
@@ -53,7 +53,7 @@
             @foreach ($page->typeColors as $type => $color)
                 <button
                     x-on:click="type = @js($type)"
-                    x-bind:class="{ '!text-purple-800 underline': type === @js($type) }"
+                    x-bind:class="{ 'text-purple-800! underline': type === @js($type) }"
                     class="p-2 md:p-4 lg:mx-4 text-gray-800 hover:text-purple-800 hover:underline transition"
                     type="button"
                 >
