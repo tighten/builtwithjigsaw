@@ -1,6 +1,6 @@
 {
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "spatie/browsershot": "^5.0.8",
         "tightenco/jigsaw": "^1.7"
     },
