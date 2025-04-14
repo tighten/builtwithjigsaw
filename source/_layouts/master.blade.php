@@ -34,7 +34,7 @@
 
         @yield('hero')
 
-        <div class="container 2xl:max-w-screen-xl mx-auto space-y-12">
+        <div class="container 2xl:max-w-7xl mx-auto space-y-12">
             @yield('body')
 
             @include ('_partials.footer')

@@ -6,7 +6,7 @@ use Illuminate\Contracts\Container\Container;
 use InvalidArgumentException;
 use Mni\FrontYAML\Parser;
 use Spatie\Browsershot\Browsershot;
-use Spatie\Image\Manipulations;
+use Spatie\Image\Enums\Fit;
 use Symfony\Component\Console\Input\InputArgument;
 use Throwable;
 use TightenCo\Jigsaw\Console\Command;
@@ -43,7 +43,7 @@ class MakeThumbnailCommand extends Command
                 // ->windowSize(1280, 720)
                 // ->setScreenshotType('jpeg', 100)
                 ->windowSize(1280, 720)
-                ->fit(Manipulations::FIT_CONTAIN, 380, 210)
+                ->fit(Fit::Contain, 380, 210)
                 ->save(public_path($path = "assets/images/sites/{$site}.png"));
 
             $this->console->info("Thumbnail saved to {$path}");
