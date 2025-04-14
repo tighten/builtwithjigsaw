@@ -29,7 +29,7 @@
 
         @include ('_partials.svgs')
     </head>
-    <body class="bg-gray-50 text-gray-800">
+    <body class="antialiased bg-gray-50 text-gray-800">
         @include ('_partials.header')
 
         @yield('hero')
