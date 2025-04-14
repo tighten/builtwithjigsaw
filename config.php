@@ -8,9 +8,18 @@ return [
             'path' => 'sites',
             'sort' => '-added',
             'image' => function ($site) {
-                $imagePath = '/assets/images/sites/' . $site->_meta->filename . '.png';
-                return file_exists(getcwd() . '/source' . $imagePath) ? $imagePath : '/assets/images/blank-site.png';
-            }
+                $source = getcwd() . '/source';
+
+                foreach (['webp', 'avif', 'png'] as $ext) {
+                    $path = sprintf("/assets/images/sites/%s.%s", $site->_meta->filename, $ext);
+
+                    if (file_exists($source . $path)) {
+                        return $path;
+                    }
+                }
+
+                return '/assets/images/blank-site.png';
+            },
         ],
         'articles' => [
             'path' => 'articles',
