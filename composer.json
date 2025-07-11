@@ -1,9 +1,9 @@
 {
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "spatie/browsershot": "^5.0.8",
         "spatie/image": "^3.8",
-        "tightenco/jigsaw": "^1.7"
+        "tightenco/jigsaw": "^1.8"
     },
     "autoload": {
         "psr-4": {

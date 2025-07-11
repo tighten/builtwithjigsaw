@@ -24,8 +24,9 @@
         <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" href="{{ mix('/css/main.css', 'assets/build') }}">
-        <script defer src="{{ mix('/js/main.js', 'assets/build') }}"></script>
+        @viteRefresh()
+        <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
+        <script defer type="module" src="{{ vite('source/_assets/js/main.js') }}"></script>
 
         @include ('_partials.svgs')
     </head>

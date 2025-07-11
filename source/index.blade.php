@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('hero')
-<div class="[background-image:url('/assets/images/jigsaw-outline.svg')] flex flex-col items-center justify-center w-full min-h-[175px] mb-12 text-white bg-cover">
+<div class="flex flex-col items-center justify-center w-full min-h-[175px] mb-12 text-white bg-cover" style="background-image:url('/assets/images/jigsaw-outline.svg')">
     <h1 class="mb-4 text-4xl font-extralight text-center">
         The ultimate showcase <br>of web sites built with Jigsaw.
     </h1>
