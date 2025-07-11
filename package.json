@@ -11,8 +11,6 @@
         "@tailwindcss/vite": "^4.1.11",
         "@tighten/jigsaw-vite-plugin": "^1.0.1",
         "alpinejs": "^3.10.3",
-        "browser-sync": "^2.29.1",
-        "browser-sync-webpack-plugin": "^2.3.0",
         "tailwindcss": "^4.1.11",
         "vanilla-lazyload": "^17.8.3",
         "vite": "^6.3.5"
