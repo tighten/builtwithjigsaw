@@ -3,3 +3,5 @@
 /node_modules/
 /source/assets/build/
 /vendor/
+/source/hot
+.env
